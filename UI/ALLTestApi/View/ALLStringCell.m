@@ -10,9 +10,11 @@
 #import <UIImageView+WebCache.h>
 #import "AppConfig.h"
 #import "MacroDefine.h"
-#import "ALLAddressLogic.h"
+#import "ALLStringModel.h"
 
 @interface ALLStringCell()
+
+@property(nonatomic,strong)IBOutlet UILabel* titleLabel;
 
 @end
 @implementation ALLStringCell
@@ -24,9 +26,9 @@
     
 }
 
--(void)bindData:(ALLAddressModel *)model
+-(void)bindData:(ALLStringModel *)model
 {
-
+    self.titleLabel.text = model.content;
 }
 
 

@@ -18,6 +18,8 @@
 //金融视图
 #import "BussVC.h"
 
+//测试api
+#import "ALLTestApiVC.h"
 
 //东方财付通视图
 #import "WastBussVC.h"
@@ -55,13 +57,15 @@
     BussVC *buss=[[BussVC alloc]init];
     
     
+    ALLTestApiVC *testApiVC= [[ALLTestApiVC alloc] init];
+    
     //搜索页面
     ALLSearchVC *search= [[ALLSearchVC alloc] init];
     
     //斗鱼主页
    
     //BaseNaviController *RecommendNavC = [[BaseNaviController alloc] initWithRootViewController:account];
-
+    
     // 1.初始化子控制器
     
     [self addChildVc:mapPageNavC title:@"地图" image:@"tabbar_icon_auth" selectedImage:@"tabbar_icon_auth_click"];
@@ -72,7 +76,7 @@
     
     [self addChildVc:buss title:@"玩吧" image:@"tabbar_icon_more" selectedImage:@"tabbar_icon_more_click@2x"];
     
-    //[self addChildVc:sellhouse title:@"搜索" image:@"tabbar_icon_more" selectedImage:@"tabbar_icon_more_click@2x"];
+    [self addChildVc:testApiVC title:@"测试" image:@"tabbar_icon_more" selectedImage:@"tabbar_icon_more_click@2x"];
     
     LHTabBar *tabBar = [[LHTabBar alloc] init];
     tabBar.delegate = self;

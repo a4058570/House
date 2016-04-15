@@ -7,7 +7,8 @@
 //
 
 #import "ALLBaseCell.h"
-#import "ALLStringModel.h"
+
+@class ALLStringModel;
 @interface ALLStringCell : ALLBaseCell
 
 -(void)bindData:(ALLStringModel *)model;

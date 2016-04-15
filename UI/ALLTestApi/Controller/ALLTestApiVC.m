@@ -13,9 +13,14 @@
 #import "UIViewController+Empty.h"
 #import "ALLEmptyView.h"
 #import "ALLBaseCell.h"
+#import "ALLStringModel.h"
+#import "ALLStringCell.h"
 
 @interface ALLTestApiVC ()
+
 @property (nonatomic,strong)NSArray *itemArray;
+@property (nonatomic,strong)NSMutableArray<ALLStringModel*> *datas;
+
 @end
 
 @implementation ALLTestApiVC
@@ -26,7 +31,7 @@
     [super viewDidLoad];
     
     //设置标题
-    self.title=NSLocalizedString(@"addresslist", nil);
+    self.title=@"测试api";
     
     self.tableView.tableFooterView=[[UIView alloc]init];
 
@@ -34,17 +39,17 @@
     
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
-
-    
-    
     self.refresh=[[ALLTableRefresh alloc]initWithTableView:(id)self.tableView type:Refresh_Page];
     self.refresh.delegate=(id)self;
     
+    //添加行
+    [self addTableCell];
+    
+    WS(weakSelf);
     [self.refresh setRefreshBlock:^{
         
-             
-         //[weakSelf.refresh finishRefreshWithArr:comments page:nil];
         
+        [weakSelf.refresh finishRefreshWithArr:self.datas page:nil];
     }];
     
     [self.refresh begainRefresh];
@@ -54,6 +59,23 @@
 
 
 #pragma mark - Member Function
+
+- (void)addTableCell
+{
+    self.itemArray = @[@"GCD",
+                       @"CoreText",
+                       @"CoreImage"];
+    
+    self.datas = [NSMutableArray array];
+    for (int i=0; i<self.itemArray.count; i++) {
+        ALLStringModel *model= [[ALLStringModel alloc]init];
+        model.content=[self.itemArray objectAtIndex:i];
+        model.cellConfig = [ALLCellConfig configWithClass:[ALLStringCell class]];
+        [self.datas addObject:model];
+    }
+    
+    
+}
 
 -(void)pushVC:(UIViewController *)vc
 {
@@ -121,7 +143,6 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated
