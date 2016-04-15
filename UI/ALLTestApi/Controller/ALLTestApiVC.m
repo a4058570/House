@@ -15,7 +15,7 @@
 #import "ALLBaseCell.h"
 
 @interface ALLTestApiVC ()
-
+@property (nonatomic,strong)NSArray *itemArray;
 @end
 
 @implementation ALLTestApiVC
@@ -35,7 +35,7 @@
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
 
-    WS(weakSelf);
+    
     
     self.refresh=[[ALLTableRefresh alloc]initWithTableView:(id)self.tableView type:Refresh_Page];
     self.refresh.delegate=(id)self;
@@ -60,7 +60,7 @@
     vc.hidesBottomBarWhenPushed=YES;
     
     [self.navigationController pushViewController:vc animated:YES];
-    // vc.hidesBottomBarWhenPushed=NO;
+
 }
 
 #pragma mark --  ALLTableRefreshDelegate
