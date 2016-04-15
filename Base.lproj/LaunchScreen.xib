@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro3_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="wMG-CF-iRa">
+                    <rect key="frame" x="119" y="156" width="243" height="69"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="243" id="YyT-s1-WPS"/>
+                        <constraint firstAttribute="height" constant="69" id="gXw-zq-rf2"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wMG-CF-iRa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="119" id="3aZ-Fq-5MM"/>
+                <constraint firstItem="wMG-CF-iRa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="157" id="O8h-lf-4N7"/>
+                <constraint firstAttribute="centerY" secondItem="wMG-CF-iRa" secondAttribute="centerY" constant="50" id="d0J-Ei-JsG"/>
+                <constraint firstAttribute="centerX" secondItem="wMG-CF-iRa" secondAttribute="centerX" id="wA8-9L-xru"/>
+                <constraint firstAttribute="trailing" secondItem="wMG-CF-iRa" secondAttribute="trailing" constant="118" id="xpw-Ax-2EN"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="3aZ-Fq-5MM"/>
+                    <exclude reference="O8h-lf-4N7"/>
+                    <exclude reference="xpw-Ax-2EN"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="540" y="428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="intro3_logo.png" width="424" height="104"/>
+    </resources>
+</document>
