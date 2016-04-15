@@ -15,17 +15,9 @@
 //地图视图
 #import "MainMapVC.h"
 
-//看房视图
-#import "LookHouseVC.h"
-
-//卖房视图
-#import "SellHouseVC.h"
-
 //金融视图
 #import "BussVC.h"
 
-//用户视图
-#import "AccountVC.h"
 
 //东方财付通视图
 #import "WastBussVC.h"
@@ -59,19 +51,16 @@
     WastBussVC *wastbuss=[[WastBussVC alloc]init];
     BaseNaviController *wastbuss_nav = [[BaseNaviController alloc] initWithRootViewController:wastbuss];
     
-    //卖房子
-    SellHouseVC *sellhouse=[[SellHouseVC alloc]init];
     
     BussVC *buss=[[BussVC alloc]init];
     
-    AccountVC *account=[[AccountVC alloc]init];
     
     //搜索页面
     ALLSearchVC *search= [[ALLSearchVC alloc] init];
     
     //斗鱼主页
    
-    BaseNaviController *RecommendNavC = [[BaseNaviController alloc] initWithRootViewController:account];
+    //BaseNaviController *RecommendNavC = [[BaseNaviController alloc] initWithRootViewController:account];
 
     // 1.初始化子控制器
     
@@ -79,7 +68,7 @@
     
     [self addChildVc:wastbuss_nav title:@"东方" image:@"tabbar_icon_at" selectedImage:@"tabbar_icon_at_click"];
     
-    [self addChildVc:RecommendNavC title:@"斗鱼" image:@"tabbar_icon_space" selectedImage:@"tabbar_icon_space_click"];
+    //[self addChildVc:RecommendNavC title:@"斗鱼" image:@"tabbar_icon_space" selectedImage:@"tabbar_icon_space_click"];
     
     [self addChildVc:buss title:@"玩吧" image:@"tabbar_icon_more" selectedImage:@"tabbar_icon_more_click@2x"];
     

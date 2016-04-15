@@ -14,9 +14,6 @@
 #import "ALLGlobalFunction.h"
 #import "KYCuteView.h"
 
-#import "FoodSearchVC.h"
-
-#import "LookHouseVC.h"
 
 //table刷新
 #import "ALLTableRefresh.h"
@@ -157,10 +154,10 @@
         if([[div objectForKey:@"order"] isEqualToString:@"jump"]){
             if([[div objectForKey:@"jumpto"] isEqualToString:@"foodsearch"]){
                 //FoodSearchVC *foodsearch= [[FoodSearchVC alloc] init];
-                LookHouseVC *look= [[LookHouseVC alloc] init];
-                UINavigationController *navigation= [[UINavigationController alloc] initWithRootViewController:look];
+                //LookHouseVC *look= [[LookHouseVC alloc] init];
+                //UINavigationController *navigation= [[UINavigationController alloc] initWithRootViewController:look];
                 
-                [self.navigationController pushViewController:navigation animated:YES];
+                //[self.navigationController pushViewController:navigation animated:YES];
             }
         }
     }

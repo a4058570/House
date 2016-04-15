@@ -8,8 +8,6 @@
 
 #import "FunctionCollectionViewCell.h"
 
-//搜索页面
-#import "FoodSearchVC.h"
 
 @interface  FunctionCollectionViewCell()
 
