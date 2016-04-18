@@ -15,6 +15,7 @@
 #import "ALLBaseCell.h"
 #import "ALLStringModel.h"
 #import "ALLStringCell.h"
+#import "CoreText_VC.h"
 
 @interface ALLTestApiVC ()
 
@@ -29,6 +30,9 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    //设置 内容自动移到 navagiationBar下面  20+44=64
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     //设置标题
     self.title=@"测试api";
@@ -49,7 +53,7 @@
     [self.refresh setRefreshBlock:^{
         
         
-        [weakSelf.refresh finishRefreshWithArr:self.datas page:nil];
+        [weakSelf.refresh finishRefreshWithArr:weakSelf.datas page:nil];
     }];
     
     [self.refresh begainRefresh];
@@ -62,9 +66,9 @@
 
 - (void)addTableCell
 {
-    self.itemArray = @[@"GCD",
-                       @"CoreText",
-                       @"CoreImage"];
+    self.itemArray = @[@"GCD_VC",
+                       @"CoreText_VC",
+                       @"CoreImage_VC"];
     
     self.datas = [NSMutableArray array];
     for (int i=0; i<self.itemArray.count; i++) {
@@ -73,7 +77,6 @@
         model.cellConfig = [ALLCellConfig configWithClass:[ALLStringCell class]];
         [self.datas addObject:model];
     }
-    
     
 }
 
@@ -105,8 +108,6 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    // Return the number of rows in the section.
-    
     return self.refresh.datas.count;
 }
 
@@ -136,6 +137,14 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
+    //根据类名跳转到 viewcontroller
+    ALLStringModel *model=[self.refresh.datas objectAtIndex:indexPath.row];
+    
+    Class c = NSClassFromString(model.content);
+    
+    UIViewController *controller = [[c alloc] initWithNibName:model.content bundle:nil];
+
+    [self pushVC:controller];
 }
 
 #pragma mark - System Function
