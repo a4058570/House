@@ -7,6 +7,7 @@
 //
 
 #import "CoreText_VC.h"
+#import "CoreTextView.h"
 
 @interface CoreText_VC ()
 
@@ -18,8 +19,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    CoreTextView *view = [[CoreTextView alloc] initWithFrame:self.view.bounds];
+    
+    [self.view addSubview:view];
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
