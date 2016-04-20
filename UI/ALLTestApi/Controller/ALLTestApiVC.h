@@ -14,4 +14,6 @@
 
 @property(nonatomic,strong)ALLTableRefresh *refresh;
 
+- (NSString *)getTestString:(NSString *)normalStr;
+
 @end

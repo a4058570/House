@@ -88,6 +88,13 @@
 
 }
 
+#pragma mark Test Function
+
+- (NSString *)getTestString:(NSString *)normalStr
+{
+    return [NSString stringWithFormat:@"[%@]",normalStr];
+}
+
 #pragma mark --  ALLTableRefreshDelegate
 
 -(UIView *)emptyViewInRefresh:(ALLTableRefresh *)refresh
