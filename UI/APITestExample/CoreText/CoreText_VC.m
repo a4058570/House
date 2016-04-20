@@ -23,6 +23,8 @@
     
     [self.view addSubview:view];
     
+    
+    
 }
 
 
