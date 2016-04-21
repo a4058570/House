@@ -41,7 +41,7 @@
 
     self.tableView.backgroundColor=kAppBgColor;
     
-    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    //self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
     self.refresh=[[ALLTableRefresh alloc]initWithTableView:(id)self.tableView type:Refresh_Page];
     self.refresh.delegate=(id)self;
