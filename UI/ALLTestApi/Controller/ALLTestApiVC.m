@@ -68,7 +68,8 @@
 {
     self.itemArray = @[@"GCD_VC",
                        @"CoreText_VC",
-                       @"CoreImage_VC"];
+                       @"CoreImage_VC",
+                       @"PushVCEffect_VC"];
     
     self.datas = [NSMutableArray array];
     for (int i=0; i<self.itemArray.count; i++) {
@@ -150,7 +151,7 @@
     Class c = NSClassFromString(model.content);
     
     UIViewController *controller = [[c alloc] initWithNibName:model.content bundle:nil];
-
+    
     [self pushVC:controller];
 }
 

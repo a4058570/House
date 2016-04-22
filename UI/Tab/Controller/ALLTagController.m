@@ -68,15 +68,13 @@
     
     // 1.初始化子控制器
     
+    [self addChildVc:testapivc_nav title:@"测试" image:@"tabbar_icon_more" selectedImage:@"tabbar_icon_more_click@2x"];
+    
     [self addChildVc:mapPageNavC title:@"地图" image:@"tabbar_icon_auth" selectedImage:@"tabbar_icon_auth_click"];
     
     [self addChildVc:wastbuss_nav title:@"东方" image:@"tabbar_icon_at" selectedImage:@"tabbar_icon_at_click"];
     
-    //[self addChildVc:RecommendNavC title:@"斗鱼" image:@"tabbar_icon_space" selectedImage:@"tabbar_icon_space_click"];
-    
     [self addChildVc:buss title:@"玩吧" image:@"tabbar_icon_more" selectedImage:@"tabbar_icon_more_click@2x"];
-    
-    [self addChildVc:testapivc_nav title:@"测试" image:@"tabbar_icon_more" selectedImage:@"tabbar_icon_more_click@2x"];
     
     LHTabBar *tabBar = [[LHTabBar alloc] init];
     tabBar.delegate = self;
